@@ -7,10 +7,11 @@
     
 <body>
     <h1>https://open.spotify.com/artist/{{ artist_id }}</h1>
-    <h2>Song name: {{ Top_info }}</h2>
-    <h3>artist:</h3>
+    <h2>Song name: {{ info[0] }}</h2>
+    <h3>artist: {{ info[1]  }} </h3>
     <b></b>
-    <img src="https://i.kym-cdn.com/entries/icons/original/000/029/959/Screen_Shot_2019-06-05_at_1.26.32_PM.jpg" />
+    <img src={{ info[2]  }} />
+    <h4> Preview Url: {{ info[3]  }}</h4>
 
 </body>
 

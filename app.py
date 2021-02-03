@@ -15,13 +15,16 @@ def index():
     artist_id = random.choice(artist_IDs)
     random_track = topTracks(artist_id)
     Top_info = track_info(random_track)
+    Top_info = random.choice(Top_info)
+    info = Top_info.split(',')
     
  
     return render_template(
         "index.html",
        artist_id = random.choice(artist_IDs),
        random_track = topTracks(artist_id),
-       Top_info = random.choice(Top_info)
+       info = info
+       
     )
     
 app.run(
