@@ -1,5 +1,4 @@
-import os
-import requests
+import requests,random,os
 from dotenv import load_dotenv, find_dotenv
 
 url = 'https://accounts.spotify.com/api/token'
@@ -18,11 +17,13 @@ auth=(spotify_clientID,spotify_secret)
 
 access_token = response.json()['access_token']
 
+headers = {
+    'Authorization': 'Bearer ' + access_token
+}
     
-def topTracks(rand_id):
-    
-tracks = requests.get("https://api.spotify.com/v1/artists/" + rand_id + "/top-tracks?market=US", headers=headers).json()["tracks"]
+def topTracks(id):
+    tracks = requests.get("https://api.spotify.com/v1/artists/" + id + "/top-tracks?market=US", headers=headers).json()["tracks"]
     trackList = []
     for track in tracks:
         trackList.append(track)
-    return trackList
+    return random.choice(trackList)
