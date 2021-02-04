@@ -8,11 +8,11 @@
     
 <body>
     <h1>https://open.spotify.com/artist/{{ artist_id }}</h1>
-    <h2>Song name: {{ info[0] }}</h2>
-    <h3>artist: {{ info[1]  }} </h3>
+    <h2>Song name: {{ displayInfo[0] }}</h2>
+    <h3>artist: {{ displayInfo[1]  }} </h3>
     <b></b>
-    <img src={{ info[2]  }} />
-    <h4> Preview Url: {{ info[3]  }}</h4>
+    <img src={{ displayInfo[2]  }} />
+    <h4>{{ displayInfo[3] }}</h4>
 
 </body>
 

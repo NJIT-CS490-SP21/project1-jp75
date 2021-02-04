@@ -36,5 +36,9 @@ def track_info(trackList):
         name_artist = trackList[i]['album']['artists'][0]['name'] 
         song_img = trackList[i]['album']['images'][0]['url']
         song_prev = trackList[i]['preview_url']
-        infol.append(name_song + ', ' + name_artist + ', ' + song_img + ', ' + song_prev)
+        
+        if song_img != None and song_prev != None:
+            infol.append(name_song + ', ' + name_artist + ', ' + song_img + ', ' + song_prev)
+        else:
+            continue
     return infol

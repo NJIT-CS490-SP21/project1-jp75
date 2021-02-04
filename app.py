@@ -9,22 +9,28 @@ app = Flask(__name__)
 def index():
     artist_IDs = ['74XFHRwlV6OrjEM0A2NCMF', #paramore
     '6XyY86QOPPrYVGvF9ch6wz',            #Linkin Park
-    '0C0XlULifJtAgn6ZNCW2eu'             #The Killers
+    '3TVXtAsR1Inumwj472S9r4'             #Drake
     ]
     
     artist_id = random.choice(artist_IDs)
+
     random_track = topTracks(artist_id)
     Top_info = track_info(random_track)
-    Top_info = random.choice(Top_info)
-    info = Top_info.split(',')
     
+    try:
+        Top_info = random.choice(Top_info)
+        #print(Top_info)
+    except:
+        index()
+    
+    info = Top_info.split(',')
+    #print(type(info))
  
     return render_template(
         "index.html",
        artist_id = random.choice(artist_IDs),
        random_track = topTracks(artist_id),
-       info = info
-       
+       displayInfo = info
     )
     
 app.run(
