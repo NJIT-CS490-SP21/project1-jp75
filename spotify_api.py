@@ -33,11 +33,15 @@ def track_info(trackList):
     infol = []
     for i in range(len(trackList)):
         name_song = trackList[i]['name']
+        print(name_song)
         name_artist = trackList[i]['album']['artists'][0]['name'] 
         song_img = trackList[i]['album']['images'][0]['url']
         song_prev = trackList[i]['preview_url']
+        print(song_prev)
         
-        if song_img != None and song_prev != None:
+        if song_prev == None:
+            infol.append(name_song + ', ' + name_artist + ', ' + song_img + ', ' + 'Preview not available')
+        elif song_prev != None:
             infol.append(name_song + ', ' + name_artist + ', ' + song_img + ', ' + song_prev)
         else:
             continue
