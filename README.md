@@ -1,7 +1,6 @@
 Copy this repo to your own personal one
 _________________________________________________________________________________________________________
-1. Create a new directory in Cloud9. (Name it whatever you'd like)
-2. In Cloud9 terminal, in your home directory, clone the repo:git clone https://github.com/NJIT-CS490-SP21/project1-jp75
+1. In Cloud9 terminal, in your home directory, clone the repo:git clone https://github.com/NJIT-CS490-SP21/project1-jp75
 
 
 Sign up for Spotify Developer Account
