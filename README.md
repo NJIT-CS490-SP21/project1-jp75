@@ -22,13 +22,13 @@ ________________________________________________________________________________
 1. Create .env file in your project or environment directory
 2. Add your client Id with the line: export spotify_clientID='YOUR_KEY'
 3. Add your Secret key with the line: export spotify_secret='YOUR_KEY'
-4. In app.py from line 10-13 you're more than welcomed to add/change any of the artist_IDs 
 
 
 Run Application
 _________________________________________________________________________________________________________
-1. Run command in terminal python app.py. If that doesn't work view the app.py file and click run on the top of cloud 9
-2. Preview web page in browser and refresh to view another song.
+1. In app.py from line 10-13 you're more than welcomed to add/change any of the artist_IDs 
+2. Run command in terminal python app.py. If that doesn't work view the app.py file and click run on the top of cloud 9
+3. Preview web page in browser and refresh to view another song.
 
 
 Future additions
