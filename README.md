@@ -5,11 +5,13 @@ ________________________________________________________________________________
 2. click create an app or click on an existing app that you created to get the Client and Secret key
 3. save the Client ID and Client Secret keys as you're going to need them to get the application working.
 
+
 Install Requirements(if you don't already have them)
 _________________________________________________________________________________________________________
 1. pip install Flask
 2. pip install requests
 3. pip install python-dotenv
+
 
 .env file setup
 _________________________________________________________________________________________________________
@@ -18,10 +20,12 @@ ________________________________________________________________________________
 3. Add your Secret key with the line: export spotify_secret='YOUR_KEY'
 4. In app.py from line 10-13 you're more than welcomed to add/change any of the artist_IDs 
 
+
 Run Application
 _________________________________________________________________________________________________________
 1. Run command in terminal python app.py. If that doesn't work view the app.py file and click run on the top of cloud 9
 2. Preview web page in browser and refresh to view another song.
+
 
 Future additions
 _________________________________________________________________________________________________________
