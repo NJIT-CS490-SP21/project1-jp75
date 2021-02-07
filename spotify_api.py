@@ -1,4 +1,4 @@
-import requests,random,os
+import requests,os
 from dotenv import load_dotenv, find_dotenv
 
 url = 'https://accounts.spotify.com/api/token'

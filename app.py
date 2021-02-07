@@ -4,12 +4,11 @@ from spotify_api import topTracks, track_info
 
 app = Flask(__name__)
 
-
 @app.route('/')
 def index():
     artist_IDs = ['74XFHRwlV6OrjEM0A2NCMF', #paramore
     '6XyY86QOPPrYVGvF9ch6wz',            #Linkin Park
-    '0C0XlULifJtAgn6ZNCW2eu' ,            #The Killers
+    '0C0XlULifJtAgn6ZNCW2eu' ,           #The Killers
     ]
     
     artist_id = random.choice(artist_IDs)
@@ -18,14 +17,13 @@ def index():
     Top_info = track_info(random_track)
     Top_info = random.choice(Top_info)
     info = Top_info.split(',')
-    #print(Top_info)
-    #print(type(info))
+
  
     return render_template(
         "index.html",
-       artist_id = random.choice(artist_IDs),
-       random_track = topTracks(artist_id),
-       displayInfo = info
+        artist_id = random.choice(artist_IDs),
+        random_track = topTracks(artist_id),
+        displayInfo = info
     )
     
 app.run(
