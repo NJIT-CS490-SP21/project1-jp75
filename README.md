@@ -1,4 +1,4 @@
-Copy this repo to your own personal one
+Copy this repository
 _________________________________________________________________________________________________________
 1. In Cloud9 terminal, in your home directory, clone the repo:git clone https://github.com/NJIT-CS490-SP21/project1-jp75
 
@@ -33,8 +33,8 @@ ________________________________________________________________________________
 
 Future additions
 _________________________________________________________________________________________________________
-1. I Will be implementing a play button on the bottom of the preview page to hear a song preview. To do this task I will need to create a button that acts as a link to play the song in the provided url link without having it go to a new page. This will involve HTML/CSS and i'm planning on using https://www.w3schools.com/tags/tag_audio.asp. I beleive I will need to create something called <audio controls> and then us a <source src = 'link.mp3' /> to provide the audio link.
-2. I am planning on implementing a way for people to see what genre of music the person they're listening to is. If they happen to like the type of music they could click that link and it'll give them a list of the top artists in that genre. The way I would have to go about doing this is to use Artist API in spotify developer and get the genre catagory id. I would have to parse through using .json() like with the top tracks In order to get that I would have to create a get method in my spotify_api.py and implement a get method caled searchGenre. I will need to create something like genreUser = requests.get("https://api.spotify.com/v1/browse/categories/" + id, headers=headers).json() and then create a for loop to append the new artist info intoa list.
+1. I Will be implementing a play button on the bottom of the preview page to hear a song preview. To do this task I will need to create a button that acts as a link to play the song in the provided url link without having it go to a new page. This will involve HTML/CSS and i'm planning on using https://www.w3schools.com/tags/tag_audio.asp. I beleive I will need to create something called audio controls and then use src ='link.mp3'to provide the audio link. To create the play button i'm assuming I need to create a button using CSS and I have already found an example following https://codepen.io/baldtel/pen/wvwbRGo.
+2. I am planning on implementing a way for people to see what genre of music the person they're listening to is. If they happen to like the type of music they could click that link and it'll give them a list of the top artists in that genre. The way I would have to go about doing this is to use Artist API in spotify developer and get the genre catagory id. I would have to parse through using .json() like with the top tracks In order to get that I would have to create a get method in my spotify_api.py and implement a get method caled searchGenre. I will need to create something like genreUser = requests.get("https://api.spotify.com/v1/browse/categories/" + id, headers=headers).json() and then create a for loop to append the new artist info into a list.
 
 
 Technical issues
