@@ -26,23 +26,21 @@ def topTracks(id):
     trackList = []
 
     for track in tracks:
-        trackList.append(track)
+        trackList.append(track)                                                                                     #appends each of the info for top tracks
     return trackList
 
 def track_info(trackList):
     infol = []
     for i in range(len(trackList)):
-        name_song = trackList[i]['name']
-        print(name_song)
-        name_artist = trackList[i]['album']['artists'][0]['name'] 
-        song_img = trackList[i]['album']['images'][0]['url']
-        song_prev = trackList[i]['preview_url']
-        print(song_prev)
+        name_song = trackList[i]['name']                                                                            #gets the name of the song
+        name_artist = trackList[i]['album']['artists'][0]['name']                                                   #gets artist name
+        song_img = trackList[i]['album']['images'][0]['url']                                                        #gets album img url
+        song_prev = trackList[i]['preview_url']                                                                     #gets preview url
         
         if song_prev == None:
-            infol.append(name_song + ', ' + name_artist + ', ' + song_img + ', ' + 'Preview not available')
+            infol.append(name_song + ', ' + name_artist + ', ' + song_img + ', ' + 'Preview not available')         #if song doesn't have a preview url append preview not available
         elif song_prev != None:
-            infol.append(name_song + ', ' + name_artist + ', ' + song_img + ', ' + song_prev)
+            infol.append(name_song + ', ' + name_artist + ', ' + song_img + ', ' + song_prev)                       #if there is a song_prev append it normally
         else:
             continue
     return infol
