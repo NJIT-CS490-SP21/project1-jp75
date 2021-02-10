@@ -1,0 +1,16 @@
+
+h1 {
+    font-size: 60px;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 40px;
+    font-weight: bold;
+}
+
+body {
+    text-align: center;
+    background-color: #696969;
+    font-family:"Open Sans", sans-serif;
+}

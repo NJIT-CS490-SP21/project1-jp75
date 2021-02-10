@@ -4,6 +4,7 @@ from spotify_api import topTracks, track_info
 from genius_api import getLyrics
 
 app = Flask(__name__)
+app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 
 @app.route('/')
 def index():
@@ -20,6 +21,7 @@ def index():
     info = Top_info.split(',')                  #splits info into song name, artist name, album url, preview url
     
     lyrics = getLyrics(info)                    #gets lyrics url for song
+    print(lyrics)                               #sometimes drake songs don't post the right lyric page
 
  
     return render_template(
