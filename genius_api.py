@@ -3,15 +3,12 @@ from dotenv import load_dotenv, find_dotenv
 
 load_dotenv(find_dotenv())
 
-genius_clientID = os.getenv('genius_clientID')
-genius_secret = os.getenv('genius_secret')
 genius_token = os.getenv('genius_token')
 
 headers = {
     'Authorization': 'Bearer ' + genius_token
 }
     
-
 def getLyrics(info):
     name_song = info[0]                                 #name of the song from list
     name_artist = info[1]                               #name of the artist from list
