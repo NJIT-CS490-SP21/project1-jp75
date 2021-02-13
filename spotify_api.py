@@ -30,6 +30,7 @@ def topTracks(id):
     def name_song(tracks):
         return tracks['name']
         
+        
     def name_artist(tracks):
         return tracks['album']['artists'][0]['name'] 
     
@@ -53,6 +54,25 @@ def topTracks(id):
         'artist': list(artist),
         'img': list(img),
         'preview': list(preview),
+    }
+    
+    
+def relatedGenres(id):
+    url = "https://api.spotify.com/v1/artists/" + id + "/related-artists"
+    response = requests.get(url,headers=headers)
+    data = response.json()
+    related = data['artists']
+    
+    
+    genres = related[0]['genres']
+    print(genres)
+    
+    if genres == []:
+        genres = related[1]['genres']
+
+        
+    return {
+        'related_genres': genres,
     }
     
  

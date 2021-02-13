@@ -1,6 +1,6 @@
 from flask import Flask, render_template
 import os,random
-from spotify_api import topTracks
+from spotify_api import topTracks, relatedGenres
 from genius_api import getLyrics
 
 app = Flask(__name__)
@@ -15,6 +15,9 @@ def index():
     
     artist_id = random.choice(artist_IDs)       #picks a random artist
     random_tracks = topTracks(artist_id)
+    related = relatedGenres(artist_id)
+    
+    num_genres = len(related['related_genres'])
     
     #print(random_tracks)
     
@@ -30,6 +33,8 @@ def index():
     preview = random_tracks['preview'][randNum]
     lyrics = getLyrics(song,artist)
     
+    
+    
     #print(lyrics)
 
  
@@ -40,7 +45,9 @@ def index():
         artist = artist,                            #did it this way so I could make it neater with found lyrics
         img = img,
         preview = preview,
-        lyrics = lyrics                   
+        lyrics = lyrics,   
+        related_genres = related['related_genres'],
+        num = num_genres
     )
     
 app.run(

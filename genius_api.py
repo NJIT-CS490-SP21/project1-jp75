@@ -17,7 +17,7 @@ def getLyrics(name, artist):
     response = requests.get(url, data = data, headers = headers)
     data = response.json()
     link = data['response']
-    print(link)
+    #print(link)
     
     page = link['hits'][0]['result']['url']
     

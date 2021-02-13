@@ -19,6 +19,13 @@
     
     <h5 onclick="myFunction()"> <a href="#" class="button">Next Song </a> </h5>
     
+    
+    <p>Related Genres:</p>
+    {% for i in range(0,num) %}
+    <li>{{ related_genres[i] }}</li>
+    
+    {% endfor %}
+    
     <script>
     
     function myFunction() {
