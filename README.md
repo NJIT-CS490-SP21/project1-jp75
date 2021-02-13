@@ -9,6 +9,13 @@ ________________________________________________________________________________
 2. click create an app or click on an existing app that you created to get the Client and Secret key
 3. save the Client ID and Client Secret keys as you're going to need them to get the application working.
 
+Sign up for Genius Developer Account
+_________________________________________________________________________________________________________
+1. Go to the link https://genius.com/signup_or_login
+2. create your api client
+3. get the app website url from your spotify app website
+4. generate token and save it as you're going to need it to get your application to work.
+
 
 Install Requirements(if you don't already have them)
 _________________________________________________________________________________________________________
@@ -22,6 +29,7 @@ ________________________________________________________________________________
 1. Create .env file in your project or environment directory
 2. Add your client Id with the line: export spotify_clientID='YOUR_KEY'
 3. Add your Secret key with the line: export spotify_secret='YOUR_KEY'
+4. Add you genius api access token with the line: export genius_token='YOUR_KEY'
 
 
 Run Application
