@@ -22,26 +22,37 @@ headers = {
 }
 
 def topTracks(id):
-    tracks = requests.get("https://api.spotify.com/v1/artists/" + id + "/top-tracks?market=US", headers=headers).json()['tracks']
-    trackList = []
-
-    for track in tracks:
-        trackList.append(track)                                                                                     #appends each of the info for top tracks
-    return trackList
-
-def track_info(trackList):
-    infol = []
-    for i in range(len(trackList)):
-        name_song = trackList[i]['name']                                                                            #gets the name of the song
-        name_artist = trackList[i]['album']['artists'][0]['name']                                                   #gets artist name
-        song_img = trackList[i]['album']['images'][0]['url']                                                        #gets album img url
-        song_prev = trackList[i]['preview_url']                                                                     #gets preview url
-        
-        if song_prev == None:
-            infol.append(name_song + ', ' + name_artist + ', ' + song_img + ', ' + 'Preview not available')         #if song doesn't have a preview url append preview not available
-        elif song_prev != None:
-            infol.append(name_song + ', ' + name_artist + ', ' + song_img + ', ' + song_prev)                       #if there is a song_prev append it normally
-        else:
-            continue
-    return infol
+    url = "https://api.spotify.com/v1/artists/" + id + "/top-tracks?market=US"
+    response = requests.get(url, headers=headers)
+    data = response.json()
+    tracks = data['tracks']         #the map
     
+    def name_song(tracks):
+        return tracks['name']
+        
+    def name_artist(tracks):
+        return tracks['album']['artists'][0]['name'] 
+    
+    def song_img(tracks):
+        return tracks['album']['images'][0]['url']
+        
+    def song_prev(tracks):
+        prev = tracks['preview_url']
+        if prev == None:
+            return 'preview not available'
+        else:
+            return prev
+            
+    song = map(name_song,tracks)
+    artist = map(name_artist,tracks)
+    img = map(song_img,tracks)
+    preview = map(song_prev,tracks)
+
+    return {
+        'song': list(song),
+        'artist': list(artist),
+        'img': list(img),
+        'preview': list(preview),
+    }
+    
+ 

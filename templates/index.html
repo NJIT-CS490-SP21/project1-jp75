@@ -8,14 +8,14 @@
     
 <body>
     
-    <h1>{{ displayInfo[0] }}</h1>
-    <h2>By {{ displayInfo[1]  }} </h2>
+    <h1>{{ song }}</h1>
+    <h2>By {{ artist  }} </h2>
     <b></b>
-    <img src={{ displayInfo[2]  }} />
+    <img src={{ img  }} />
     <h3>
-    <audio src="{{ displayInfo[3] }}" controls> </audio>
+    <audio src="{{ preview }}" controls> </audio>
     </h3>
-    <h4 ><a href="{{ lyrics_url }}" class="button"> click here to view the lyrics!</a></h4>
+    <h4 ><a href="{{ lyrics }}" class="button"> click here to view the lyrics!</a></h4>
     
     <h5 onclick="myFunction()"> <a href="#" class="button">Next Song </a> </h5>
     

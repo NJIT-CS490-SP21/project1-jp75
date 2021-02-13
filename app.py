@@ -1,6 +1,6 @@
 from flask import Flask, render_template
 import os,random
-from spotify_api import topTracks, track_info
+from spotify_api import topTracks
 from genius_api import getLyrics
 
 app = Flask(__name__)
@@ -14,22 +14,33 @@ def index():
     ]
     
     artist_id = random.choice(artist_IDs)       #picks a random artist
-
-    random_track = topTracks(artist_id)         #gets the information from spotify api def Toptracks
-    Top_info = track_info(random_track)         #parses info of the Toptracks in Track_info
-    Top_info = random.choice(Top_info)          #choses a random song and returns the info from it
-    info = Top_info.split(',')                  #splits info into song name, artist name, album url, preview url
+    random_tracks = topTracks(artist_id)
     
-    lyrics = getLyrics(info)                    #gets lyrics url for song
-    print(lyrics)                               #sometimes drake songs don't post the right lyric page
+    #print(random_tracks)
+    
+    numSongs = len(random_tracks['song'])
+    #print(numSongs)
+    
+    randNum = random.randint(0,numSongs-1)
+    
+    
+    song = random_tracks['song'][randNum]
+    artist = random_tracks['artist'][randNum]
+    img = random_tracks['img'][randNum]
+    preview = random_tracks['preview'][randNum]
+    lyrics = getLyrics(song,artist)
+    
+    #print(lyrics)
 
  
     return render_template(
         "index.html",
-        artist_id = random.choice(artist_IDs),
         random_track = topTracks(artist_id),
-        displayInfo = info, 
-        lyrics_url = lyrics
+        song = song,
+        artist = artist,                            #did it this way so I could make it neater with found lyrics
+        img = img,
+        preview = preview,
+        lyrics = lyrics                   
     )
     
 app.run(
