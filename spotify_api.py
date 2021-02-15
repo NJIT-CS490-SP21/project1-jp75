@@ -28,32 +28,32 @@ def topTracks(id):
     tracks = data['tracks']         #the map
     
     def name_song(tracks):
-        return tracks['name']
+        return tracks['name']           #get song name 
         
         
     def name_artist(tracks):
-        return tracks['album']['artists'][0]['name'] 
+        return tracks['album']['artists'][0]['name']        #get name artist
     
     def song_img(tracks):
-        return tracks['album']['images'][0]['url']
+        return tracks['album']['images'][0]['url']          #ger song img
         
     def song_prev(tracks):
-        prev = tracks['preview_url']
+        prev = tracks['preview_url']            #get preview url
         if prev == None:
-            return 'preview not available'
+            return 'preview not available'      #if no song  return preview not available
         else:
-            return prev
+            return prev 
             
-    song = map(name_song,tracks)
-    artist = map(name_artist,tracks)
-    img = map(song_img,tracks)
-    preview = map(song_prev,tracks)
+    song = map(name_song,tracks)                #maps out all songs
+    artist = map(name_artist,tracks)            #maps out all artist names
+    img = map(song_img,tracks)                  #maps out all img urls
+    preview = map(song_prev,tracks)             #maps out all preview urls
 
     return {
-        'song': list(song),
-        'artist': list(artist),
-        'img': list(img),
-        'preview': list(preview),
+        'song': list(song),                     #creates a list of songs
+        'artist': list(artist),                 #creates a list of artists
+        'img': list(img),                       #creates a list of img urls
+        'preview': list(preview),               #creates a list of preview urls
     }
     
     
@@ -68,11 +68,11 @@ def relatedGenres(id):
     print(genres)
     
     if genres == []:
-        genres = related[1]['genres']
+        genres = related[1]['genres']                   #all genres were already in a list some artists didn't have a related genere list at the 0th postion
 
         
     return {
-        'related_genres': genres,
+        'related_genres': genres,                       #returned related genres that we got
     }
     
  
