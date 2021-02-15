@@ -3,7 +3,7 @@
     
 <head>
     <link rel="stylesheet" href={{ url_for('static', filename='styles.css') }} /> 
-    <title>CS490 Project 1</title>
+    <title>Topify</title>
 </head>
     
 <body>
@@ -20,10 +20,10 @@
     <h5 onclick="myFunction()"> <a href="#" class="button">Next Song </a> </h5>
     
     
-    <p>Related Genres:</p>
+    <p>Related Genres:
     {% for i in range(0,num) %}
     <li>{{ related_genres[i] }}</li>
-    
+    </p>
     {% endfor %}
     
     <script>
