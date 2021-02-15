@@ -13,8 +13,8 @@ Sign up for Genius Developer Account
 _________________________________________________________________________________________________________
 1. Go to the link https://genius.com/developers
 2. Create an api client
-3. Signup or login to an existing account to so this
-3. Get the app website url from your spotify app website
+3. Signup or login to an existing account
+3. Get the app website url from your spotify deceloper account
 4. Generate token and save it as you're going to need it to get your application to work.
 
 
@@ -40,16 +40,16 @@ ________________________________________________________________________________
 3. Preview web page in browser and refresh to view another song.
 
 
-If you want to apply it into a heroku server(not required)
+If you want to apply it into a heroku server (not required)
 _________________________________________________________________________________________________________
-1. install "npm install -g heroku" in your terminal
-2. go to heroku.com and create an account
+1. Install "npm install -g heroku" in your terminal
+2. Go to heroku.com and create an account
 3. I already created the Procfile and the requirements file so just login into heroku using "heroku login -i"
-4. create a new heroku app by typing in "heroku create"
+4. Create a new heroku app by typing in "heroku create"
 5. Push the code into your heroku application using "git push heroku main"
-6.  go to https://dashboard.heroku.com/apps and click your App, then go to Settings, and click "Reveal Config Vars"
-7.  Copy and paste your keys: "spotify_clientID, spotify_secret, and genius_token" and the key without the '' in your .env file
-8.  run your app using heroku open in terminal or going to the website that was provided when creating the heroku app
+6. Go to https://dashboard.heroku.com/apps and click your App, then go to Settings, and click "Reveal Config Vars"
+7. Copy and paste your keys: "spotify_clientID, spotify_secret, and genius_token" and the key without the '' in your .env file
+8. Run your app using heroku open in terminal or going to the website that was provided when creating the heroku app
 an example of a running app is right here: https://topify-cs490.herokuapp.com/
 
 
