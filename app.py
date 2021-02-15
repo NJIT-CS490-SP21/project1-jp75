@@ -8,9 +8,9 @@ app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 
 @app.route('/')
 def index():
-    artist_IDs = ['74XFHRwlV6OrjEM0A2NCMF', #paramore
+    artist_IDs = ['74XFHRwlV6OrjEM0A2NCMF', #Paramore
     '6XyY86QOPPrYVGvF9ch6wz',            #Linkin Park
-    '3TVXtAsR1Inumwj472S9r4'            #Drake
+    '4MCBfE4596Uoi2O4DtmEMz'            #Juice WRLD
     ]
     
     artist_id = random.choice(artist_IDs)       #picks a random artist

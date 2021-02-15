@@ -50,7 +50,7 @@ ________________________________________________________________________________
 6.  go to https://dashboard.heroku.com/apps and click your App, then go to Settings, and click "Reveal Config Vars"
 7.  Copy and paste your keys: "spotify_clientID, spotify_secret, and genius_token" and the key without the '' in your .env file
 8.  run your app using heroku open in terminal or going to the website that was provided when creating the heroku app
-an example of a running app is right here: https://morning-hamlet-35008.herokuapp.com/
+an example of a running app is right here: https://topify-cs490.herokuapp.com/
 
 
 Future additions
